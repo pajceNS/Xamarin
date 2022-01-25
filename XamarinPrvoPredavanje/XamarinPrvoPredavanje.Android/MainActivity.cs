@@ -11,6 +11,7 @@ namespace XamarinPrvoPredavanje.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
+            //komentar1
         {
             base.OnCreate(savedInstanceState);
 
