@@ -28,35 +28,53 @@
         VerticalScrollBarVisibility="Never"
         Orientation="Vertical">
         <StackLayout BackgroundColor="WhiteSmoke">
-        <Frame BackgroundColor="White"
+            <Frame BackgroundColor="White"
            CornerRadius="15" 
            HasShadow="True"
            Margin="40, 20, 40, 15">
-            <StackLayout>
-                <Label Text="Messages sent by participants in this conversation are encrypted"
+                <StackLayout>
+                    <Label Text="Messages sent by participants in this conversation are encrypted"
                        FontSize="12"
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center"/>
-            </StackLayout>
+                </StackLayout>
 
-    <StackLayout Spacing="10"
-                 VerticalOptions="Start" 
-                 Margin="20">
-        <Entry x:Name="UsernameEntry"
-               FontSize="30" 
-               Placeholder="Username"></Entry>
-        <Entry x:Name="PasswordEntry"
-               FontSize="30" 
-               IsPassword="True" 
-               Placeholder="Password"></Entry>
-        <Button Clicked="Button_Clicked"
-                Text="Login" 
-                TextColor="White" CornerRadius="10"  
-                BackgroundColor="Blue"></Button>
-        <Label HorizontalOptions="Center"
-               x:Name="InfoLabel"
-               FontSize="20"></Label>
-    </StackLayout>
+            </Frame>
+            <Frame
+            Style="{StaticResource SentMessageStyle}">
+                <StackLayout>
+                    <Label
+                Text="Remember my product idea? I have updates, but it's sensitive"
+                Style="{StaticResource MessageText}"/>
+                    <Label
+                    Text="09:28"
+                    HorizontalOptions="Start"
+                    FontSize="12"/>
+                </StackLayout>
+            </Frame>
+            <Frame
+            Style="{StaticResource ReceivedMessageStyle}">
+                <StackLayout>
+                    <Label
+                Text="Send them to me here. Eveything's encrypted."
+                Style="{StaticResource MessageText}"/>
+                    <Label
+                    Text="09:29"
+                    HorizontalOptions="End"
+                    FontSize="12"/>
+                </StackLayout>
+            </Frame>
+            <Frame 
+            Style="{StaticResource SentMessageStyle}">
+                <StackLayout>
+                    <Image Source="topsecret"/>
+                    <Label
+                    Text="09:30"
+                    FontSize="12"
+                    HorizontalOptions="Start"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>
