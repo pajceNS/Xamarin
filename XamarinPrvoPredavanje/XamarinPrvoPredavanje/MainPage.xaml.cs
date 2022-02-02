@@ -15,9 +15,7 @@ namespace XamarinPrvoPredavanje
 
         public MainPage()
         {
-            InitializeComponent();
-            
-        }
+            InitializeComponent();}
 
         private void Button_Clicked(object sender, EventArgs e)
         {
