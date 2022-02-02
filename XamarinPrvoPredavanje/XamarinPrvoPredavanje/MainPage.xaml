@@ -6,6 +6,7 @@
     <StackLayout Spacing="10"
                  VerticalOptions="Center" 
                  Margin="20">
+        <Image Source="logo.png"/>
         <Entry x:Name="UsernameEntry"
                FontSize="30" 
                Placeholder="Username"></Entry>
