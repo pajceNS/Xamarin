@@ -17,6 +17,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.7*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -31,23 +32,25 @@
                VerticalTextAlignment="Center"
                HorizontalTextAlignment="End"
                FontSize="60"/>
-        
-        <Button Grid.Row="1" Grid.Column="0" Text="7" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="1" Grid.Column="1" Text="8" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="1" Grid.Column="2" Text="9" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="1" Grid.Column="3" Text="/" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
-        <Button Grid.Row="2" Grid.Column="0" Text="4" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="2" Grid.Column="1" Text="5" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="2" Grid.Column="2" Text="6" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="2" Grid.Column="3" Text="*" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
-        <Button Grid.Row="3" Grid.Column="0" Text="1" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="3" Grid.Column="1" Text="2" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="3" Grid.Column="2" Text="3" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="3" Grid.Column="3" Text="-" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
-        <Button Grid.Row="4" Grid.Column="0" Text="0" FontSize="50" BackgroundColor="White"/>
-        <Button Grid.Row="4" Grid.Column="1" Text="." FontSize="50" BackgroundColor="Orange" TextColor="White"/>
-        <Button Grid.Row="4" Grid.Column="2" Text="=" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
-        <Button Grid.Row="4" Grid.Column="3" Text="+" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
+
+        <Button Grid.Row="1" Grid.Column="0" Text="C" FontSize="20" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="BACK" FontSize="20" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="7" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="8" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="9" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="2" Grid.Column="3" Text="/" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="6" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="5" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="4" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="3" Grid.Column="3" Text="*" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="4" Grid.Column="0" Text="3" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="2" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="4" Grid.Column="2" Text="1" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="4" Grid.Column="3" Text="-" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="5" Grid.Column="0" Text="0" FontSize="50" BackgroundColor="White"/>
+        <Button Grid.Row="5" Grid.Column="1" Text="." FontSize="50" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="5" Grid.Column="2" Text="=" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="5" Grid.Column="3" Text="+" FontSize="50" BackgroundColor="Orange" TextColor="White"/>
 
 
     </Grid>
