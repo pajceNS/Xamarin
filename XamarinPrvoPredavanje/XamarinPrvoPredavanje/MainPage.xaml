@@ -4,7 +4,7 @@
              x:Class="XamarinPrvoPredavanje.MainPage">
 
     <StackLayout Spacing="10"
-                 VerticalOptions="Start" 
+                 VerticalOptions="Center" 
                  Margin="20">
         <Entry x:Name="UsernameEntry"
                FontSize="30" 
