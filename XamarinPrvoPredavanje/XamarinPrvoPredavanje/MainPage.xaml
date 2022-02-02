@@ -33,8 +33,8 @@
                HorizontalTextAlignment="End"
                FontSize="60"/>
 
-        <Button Grid.Row="1" Grid.Column="0" Text="C" FontSize="20" BackgroundColor="Orange" TextColor="White"/>
-        <Button Grid.Row="1" Grid.Column="2" Text="BACK" FontSize="20" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="C" FontSize="20" BackgroundColor="Orange" TextColor="White"/>
+        <Button Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="BACK" FontSize="20" BackgroundColor="Orange" TextColor="White"/>
         <Button Grid.Row="2" Grid.Column="0" Text="7" FontSize="50" BackgroundColor="White"/>
         <Button Grid.Row="2" Grid.Column="1" Text="8" FontSize="50" BackgroundColor="White"/>
         <Button Grid.Row="2" Grid.Column="2" Text="9" FontSize="50" BackgroundColor="White"/>
