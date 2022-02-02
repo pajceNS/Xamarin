@@ -2,9 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPrvoPredavanje.MainPage">
-    
 
-        <StackLayout Spacing="10"
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="White" Offset="0.3" />
+                <GradientStop Color="#187f7d" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+    
+    <StackLayout Spacing="10"
                      VerticalOptions="Center"
                      Margin="10">
             <Image Source="logo.png"/>
@@ -23,7 +30,8 @@
                    x:Name="InfoLabel" 
                    FontSize="20"></Label>
         </StackLayout>
-        
-    
+    </Grid>
+
+
 
 </ContentPage>
