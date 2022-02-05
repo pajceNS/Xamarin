@@ -4,20 +4,89 @@
              x:Class="XamarinPrvoPredavanje.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
+        <Label
+            Text="02hero"
+            HorizontalOptions="CenterAndExpand"
+            FontSize="30"
+            TextColor="Black"
+            TextDecorations="Underline,None">
+        </Label>
+        <Label
+            x:Name="GestureLabel"
+            Text="02hero"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            FontSize="40"
+            TextColor="Red"
+            TextTransform="Uppercase"
+            CharacterSpacing="5"
+            BackgroundColor="Black">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label HorizontalOptions="FillAndExpand"
+               HorizontalTextAlignment="Center"
+               FontSize="Title"
+               MaxLines="-1"
+               TextColor="Black"
+               LineBreakMode="TailTruncation">
+            <Label.Text>
+                Pozdrav svima,Sad ću da vas pitam nešto privatno, ali zbog covid-a i našeg putovanja u Bosnu i Hercegovinu, jako važno :smile:Naime, u Bosnu i Hercegovinu putujemo na regionalni modul Prenosivih veština u aprilu pa zbog putovanja u drugu zemlju potrebno je nešto od navedenog:DA STE VAKCINISANIDA STE PRELEŽALI COVID U POSLJEDNJIH 6 MJESECINEGATIVAN ANTIGENSKI NE STARIJI OD 48HNEGATIVAN PCR NE STARIJI OD 72HMolim vas ko je vakcinisan ili preležao covid u posljednjih 6 mjeseci, odnosno ko već ima sertifikat, ili uslove isti da dobije da reaguje na poruku sa:white_check_mark: dok oni koji isti nemaju i ne ispunjavaju uslove da reaguju sa :x:Hvala unaprijed :four_leaf_clover::heart:
+            </Label.Text>
+        </Label>
+        <Label
+            Text="Xamarin"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            TextColor="Crimson"
+            FontSize="40"
+            FontFamily="Comic"/>
+        <Label
+            Text="Xamarin"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            TextColor="Crimson"
+            FontSize="40"
+            FontFamily="Comic-bold"/>
+        <Label
+            Text="Xamarin"
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            TextColor="DarkBlue"
+            FontSize="40"
+            FontAttributes="Bold,Italic"/>
+        <Label
+            HorizontalOptions="FillAndExpand"
+            HorizontalTextAlignment="Center"
+            FontSize="40"
+            TextColor="Fuchsia">
             <Label.FormattedText>
                 <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
+                    <Span Text="Comic"
+                          TextColor="Red"
+                          FontFamily="Comic"
+                          FontSize="40"/>
+                    <Span Text=" | "/>
+                    <Span Text="Comic-bold"
+                          TextColor="Blue"
+                          FontFamily="Comic-bold"
+                          FontSize="30"/>
                 </FormattedString>
             </Label.FormattedText>
+
+        </Label>
+        <Label 
+               x:Name="LinkLabel"
+               Text="neki link"
+               HorizontalOptions="Center"
+               TextColor="Blue"
+               TextDecorations="Underline"
+               FontSize="30">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+            </Label.GestureRecognizers>
+            
         </Label>
     </StackLayout>
 
