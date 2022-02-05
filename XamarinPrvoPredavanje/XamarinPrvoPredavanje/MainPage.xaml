@@ -29,14 +29,15 @@
         Orientation="Vertical">
         <StackLayout BackgroundColor="WhiteSmoke">
             <Frame BackgroundColor="White"
-           CornerRadius="15" 
-           HasShadow="True"
-           Margin="40, 20, 40, 15">
+                CornerRadius="15" 
+                HasShadow="True"
+                Margin="40, 20, 40, 15">
                 <StackLayout>
                     <Label Text="Messages sent by participants in this conversation are encrypted"
-                       FontSize="12"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"/>
+                           TextColor="Black"
+                           FontSize="12"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"/>
                 </StackLayout>
 
             </Frame>
@@ -44,12 +45,13 @@
             Style="{StaticResource SentMessageStyle}">
                 <StackLayout>
                     <Label
-                Text="Remember my product idea? I have updates, but it's sensitive"
-                Style="{StaticResource MessageText}"/>
+                        Text="Remember my product idea? I have updates, but it's sensitive"
+                        Style="{StaticResource MessageText}"/>
                     <Label
-                    Text="09:28"
-                    HorizontalOptions="Start"
-                    FontSize="12"/>
+                        Text="09:28"
+                        TextColor="Black"
+                        HorizontalOptions="Start"
+                        FontSize="12"/>
                 </StackLayout>
             </Frame>
             <Frame
@@ -60,6 +62,7 @@
                 Style="{StaticResource MessageText}"/>
                     <Label
                     Text="09:29"
+                    TextColor="Black"
                     HorizontalOptions="End"
                     FontSize="12"/>
                 </StackLayout>
@@ -70,6 +73,7 @@
                     <Image Source="topsecret"/>
                     <Label
                     Text="09:30"
+                    TextColor="Black"
                     FontSize="12"
                     HorizontalOptions="Start"/>
                 </StackLayout>
