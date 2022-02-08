@@ -13,6 +13,7 @@ namespace XamarinPrvoPredavanje
         public MainPage()
         {
             InitializeComponent();
+            //LogoImage.Source = ImageSource.FromResource("XamarinPrvoPredavanje.Images.logo.png", typeof(MainPage).Assembly);
         }
     }
 }
