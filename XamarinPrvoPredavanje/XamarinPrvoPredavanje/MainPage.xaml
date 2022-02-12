@@ -4,7 +4,17 @@
              x:Class="XamarinPrvoPredavanje.MainPage">
 
     <StackLayout>
-        
+        <Entry 
+            Text="Random text" 
+            FontSize="30"
+            Placeholder="Unesi svoje ime"
+            IsPassword="True"
+            ClearButtonVisibility="WhileEditing"
+            Keyboard="Text"
+            CursorPosition="0"
+            IsSpellCheckEnabled="True"
+            ReturnType="Default"
+            IsTextPredictionEnabled="True"/>
     </StackLayout>
 
 </ContentPage>
