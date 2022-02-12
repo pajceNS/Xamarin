@@ -14,5 +14,10 @@ namespace XamarinPrvoPredavanje
         {
             InitializeComponent();
         }
+
+        private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            StepperValueLabel.Text = e.NewValue.ToString();
+        }
     }
 }
