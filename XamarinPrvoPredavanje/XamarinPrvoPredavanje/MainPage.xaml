@@ -4,7 +4,9 @@
              x:Class="XamarinPrvoPredavanje.MainPage">
 
     <StackLayout>
-        
+        <Label x:Name="SliderValueLabel" FontSize="30"/>
+        <Slider Maximum="100" Minimum="0" ThumbColor="Yellow" ValueChanged="Slider_ValueChanged" Value="50"
+                MaximumTrackColor="DarkCyan" MinimumTrackColor="Aquamarine"/>
     </StackLayout>
 
 </ContentPage>

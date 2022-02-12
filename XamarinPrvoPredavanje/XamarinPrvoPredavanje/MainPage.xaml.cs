@@ -14,5 +14,10 @@ namespace XamarinPrvoPredavanje
         {
             InitializeComponent();
         }
+
+        private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            SliderValueLabel.Text = e.NewValue.ToString();
+        }
     }
 }
