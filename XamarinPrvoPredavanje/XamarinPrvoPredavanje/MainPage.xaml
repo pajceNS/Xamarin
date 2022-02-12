@@ -4,7 +4,10 @@
              x:Class="XamarinPrvoPredavanje.MainPage">
 
     <StackLayout>
-        
+        <Label FontSize="30" x:Name="FirstCheckbox" Text="Random text"/>
+        <Label FontSize="30" x:Name="SecondCheckbox" Text="Random text"/>
+        <CheckBox x:Name="First" IsChecked="True" CheckedChanged="CheckBox_CheckedChanged"/>
+        <CheckBox x:Name="Second" CheckedChanged="CheckBox_CheckedChanged_1"/>
     </StackLayout>
 
 </ContentPage>
