@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPrvoPredavanje.MainPage">
 
-    <StackLayout>
-        
+    <StackLayout RadioButtonGroup.GroupName="">
+        <RadioButton Content="Macka" GroupName="Prva grupa" Value="Macka"/>
+        <RadioButton Content="Pas" GroupName="Prva grupa" Value="Pas"/>
+        <RadioButton Content="Zirafa" GroupName="Druga grupa" Value="Zirafa"/>
+        <RadioButton Content="Krokodil" GroupName="Druga grupa" Value="Krokodil"/>
     </StackLayout>
 
 </ContentPage>
