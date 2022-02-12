@@ -14,5 +14,10 @@ namespace XamarinPrvoPredavanje
         {
             InitializeComponent();
         }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            SwitchStateLabel.Text = e.Value ? "Toggled" : "Not toggled";
+        }
     }
 }

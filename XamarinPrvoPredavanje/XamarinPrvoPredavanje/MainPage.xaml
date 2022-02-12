@@ -4,7 +4,10 @@
              x:Class="XamarinPrvoPredavanje.MainPage">
 
     <StackLayout>
-        
+        <Label x:Name="SwitchStateLabel" FontSize="30"/>
+        <Switch IsToggled="False"
+                Toggled="Switch_Toggled"
+                HorizontalOptions="Center" ThumbColor="Aqua" OnColor="Gold"/>
     </StackLayout>
 
 </ContentPage>
