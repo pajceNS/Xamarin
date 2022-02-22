@@ -17,15 +17,26 @@ namespace XamarinPrvoPredavanje
             InitializeComponent();
             NumberLabel.Text = number.ToString();
         }
+        protected override void OnAppearing()
+        {
+            NumberLabel.Text = "Not a number";
+        }
+        protected override void OnDisappearing()
+        {
+           // base.OnDisappearing();
+        }
 
         public override bool Equals(object obj)
         {
             return obj is SecondPage page;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ThirdPage());
+            //Navigation.PushModalAsync(new ThirdPage());
+            //DisplayAlert("Alert title", "Alert message", "Alert cancel");
+            
+            var result = await DisplayPromptAsync("Prompt title", "Prompt message", "Prompt ok", "Prompt cancel");
         }
     }
 }

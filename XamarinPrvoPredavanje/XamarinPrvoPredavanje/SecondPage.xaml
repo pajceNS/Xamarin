@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPrvoPredavanje.SecondPage"
              Title="Second Page"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="True">
     
     <Grid BackgroundColor="Blue">
         <Grid.RowDefinitions>
@@ -12,7 +12,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="NumberLabel" FontSize="50" Grid.Row="0" Text="Empty" TextColor="White"/>
         <Button VerticalOptions="Start"
-                Text="Navigate back"
+                Text="Navigate forward"
                 Clicked="Button_Clicked"
                 Grid.Row="1"/>
     </Grid>

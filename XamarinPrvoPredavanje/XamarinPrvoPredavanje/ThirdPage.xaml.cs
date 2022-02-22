@@ -20,7 +20,7 @@ namespace XamarinPrvoPredavanje
         private void Button_Clicked(object sender, EventArgs e)
         { 
 
-            Navigation.PopToRootAsync();
+            Navigation.PopModalAsync();
         }
     }
 }
