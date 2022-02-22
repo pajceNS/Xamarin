@@ -2,12 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPrvoPredavanje.SecondPage"
-             Title="Second Page">
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="Blue">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             Title="Second Page"
+             NavigationPage.HasNavigationBar="False">
+    
+    <Grid BackgroundColor="Blue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="NumberLabel" FontSize="50" Grid.Row="0" Text="Empty" TextColor="White"/>
+        <Button VerticalOptions="Start"
+                Text="Navigate back"
+                Clicked="Button_Clicked"
+                Grid.Row="1"/>
+    </Grid>
 </ContentPage>

@@ -12,9 +12,20 @@ namespace XamarinPrvoPredavanje
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SecondPage : ContentPage
     {
-        public SecondPage()
+        public SecondPage(int number)
         {
             InitializeComponent();
+            NumberLabel.Text = number.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is SecondPage page;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ThirdPage());
         }
     }
 }

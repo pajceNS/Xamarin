@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
-using XamarinPrvoPredavanje;
+using Xamarin.Forms.Xaml;
 
 namespace XamarinPrvoPredavanje
 {
-    public partial class MainPage : ContentPage
-    { 
-        public MainPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ThirdPage : ContentPage
+    {
+        public ThirdPage()
         {
             InitializeComponent();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new SecondPage(1));
+        { 
+
+            Navigation.PopToRootAsync();
         }
     }
 }
