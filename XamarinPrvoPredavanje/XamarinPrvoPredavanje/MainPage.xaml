@@ -3,12 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPrvoPredavanje.MainPage">
 
-    <Grid Style="{DynamicResource StaticResource GridStyle}">
-        <Button Text="Change theme" 
-                VerticalOptions="Start"
-                WidthRequest="100"
-                Clicked="Button_Clicked"/>
-
-    </Grid>
+    <StackLayout>
+        
+    </StackLayout>
 
 </ContentPage>
