@@ -1,10 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinPrvoPredavanje.MainPage">
-
-    <StackLayout>
-        
-    </StackLayout>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:XamarinPrvoPredavanje.ViewModels"
+             x:Class="XamarinPrvoPredavanje.MainPage"
+             x:DataType="viewmodels:MainViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:MainViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <CollectionView
+            Grid.Row="0"
+            ItemsSource="{Binding NotesSource}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="viewmodels:NoteViewModel">
+                    <StackLayout>
+                        <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="1" Text="{Binding Title}"/>
+                        <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Description}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1"
+                Text="Add note"
+                Command="{Binding AddNoteCommand}"/>
+    </Grid>
 
 </ContentPage>
