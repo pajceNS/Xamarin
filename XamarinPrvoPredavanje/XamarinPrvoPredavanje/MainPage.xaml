@@ -13,12 +13,13 @@
         </Grid.RowDefinitions>
         <CollectionView
             Grid.Row="0"
+            SelectionMode="Single"
             ItemsSource="{Binding NotesSource}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="viewmodels:NoteViewModel">
                     <StackLayout>
-                        <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="1" Text="{Binding Title}"/>
-                        <Label FontSize="30" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Description}"/>
+                        <Label FontSize="25" LineBreakMode="TailTruncation" MaxLines="1" Text="{Binding Title}"/>
+                        <Label FontSize="20" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Description}"/>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

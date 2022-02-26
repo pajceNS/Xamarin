@@ -15,6 +15,7 @@ namespace XamarinPrvoPredavanje.ViewModels
         public NoteViewModel(Action action)
         {
             _action = action;
+            SaveNoteCommand = new Command(OnSaveNoteCommand);
         }
         public NoteViewModel(Note note)
         {
@@ -27,6 +28,8 @@ namespace XamarinPrvoPredavanje.ViewModels
         {
            var note = new Note(Title, Description);
             App.NotesRepository.AddNote(note);
+            _action.Invoke();
+            Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
         public ICommand SaveNoteCommand { get; }
@@ -46,7 +49,6 @@ namespace XamarinPrvoPredavanje.ViewModels
             {
                 _description = value;
                 OnPropertyChanged(nameof(Description));
-                Application.Current.MainPage.Navigation.PopModalAsync();
             }
         }
     }

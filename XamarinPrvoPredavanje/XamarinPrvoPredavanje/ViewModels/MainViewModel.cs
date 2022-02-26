@@ -31,7 +31,7 @@ namespace XamarinPrvoPredavanje.ViewModels
 
         private void OnAddNoteCommand()
         {
-          // Application.Current.MainPage.Navigation.PushModalAsync(new NoteView() { BindingContext = new NoteViewModel() });
+            Application.Current.MainPage.Navigation.PushModalAsync(new NoteView() { BindingContext = new NoteViewModel(()=>LoadNotes()) });
         }
 
         public ICommand AddNoteCommand { get; }
