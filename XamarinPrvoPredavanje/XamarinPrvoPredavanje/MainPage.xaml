@@ -4,14 +4,14 @@
              x:Class="XamarinPrvoPredavanje.MainPage">
     <ContentPage.Resources>
         <Style TargetType="Frame" x:Key="UserFrame">
-            <Setter Property="BackgroundColor" Value="#d7f0ff "/>
+            <Setter Property="BackgroundColor" Value="#d7f0ff"/>
             <Setter Property="CornerRadius" Value="8" />
-            <Setter Property="Padding" Value="5,5,5,10" />
+            <Setter Property="Padding" Value="5,5,5,10"/>
             <Setter Property="HasShadow" Value="true"/>
         </Style>
         <Style TargetType="StackLayout" x:Key="UserStack">
             <Setter Property="Orientation" Value="Horizontal"/>
-            <Setter Property="Margin" Value="80,0,15,15" />
+            <Setter Property="Margin" Value="80,0,15,15"/>
         </Style>
         <Style TargetType="Frame" x:Key="UserImageFrame">
             <Setter Property="CornerRadius" Value="50"/>
@@ -24,9 +24,9 @@
 
         </Style>
         <Style TargetType="Label" x:Key="textMessage">
-            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="TextColor" Value="Black"/>
             <Setter Property="FontSize" Value="16"/>
-            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
         </Style>
     </ContentPage.Resources>
 
@@ -45,13 +45,13 @@
                 </StackLayout>
             </Frame>
             <Frame Style="{StaticResource Key=UserImageFrame}">
-                <Image Source="aperson" />
+                <Image Source="aperson"/>
             </Frame>
 
         </StackLayout>
         <StackLayout Style="{StaticResource Key=UserStack}" Margin="10,0,85,15">
             <Frame Style="{StaticResource Key=UserImageFrame}">
-                <Image Source="vperson" />
+                <Image Source="vperson"/>
             </Frame>
             <Frame Style="{StaticResource Key=UserFrame}" BackgroundColor="#eff6fb">
                 <StackLayout> <Label Style="{StaticResource Key=textMessage}" 
@@ -64,7 +64,7 @@
         </StackLayout>
         <StackLayout Style="{StaticResource Key=UserStack}">
             <Frame Style="{StaticResource Key=UserFrame}" >
-                <StackLayout >
+                <StackLayout>
                     <Image Source="topsecret" HeightRequest="175" Margin="2,2"/>
                     <Label Text="09:30"/>
                 </StackLayout>
