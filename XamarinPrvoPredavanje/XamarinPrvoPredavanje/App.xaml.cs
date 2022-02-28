@@ -6,6 +6,8 @@ namespace XamarinPrvoPredavanje
 {
     public partial class App : Application
     {
+        public static object NotesRepository { get; internal set; }
+
         public App()
         {
             InitializeComponent();

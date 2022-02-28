@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPrvoPredavanje.MainPage">
+   
     <ContentPage.Resources>
         <Style TargetType="Frame" x:Key="UserFrame">
             <Setter Property="BackgroundColor" Value="#d7f0ff"/>
@@ -21,7 +22,6 @@
             <Setter Property="Margin" Value="5,0,5,0"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
             <Setter Property="VerticalOptions" Value="Center"/>
-
         </Style>
         <Style TargetType="Label" x:Key="textMessage">
             <Setter Property="TextColor" Value="Black"/>
@@ -29,13 +29,15 @@
             <Setter Property="HorizontalTextAlignment" Value="Start"/>
         </Style>
     </ContentPage.Resources>
-
+    
     <StackLayout BackgroundColor="WhiteSmoke">
+        
         <Frame CornerRadius="10" Margin="50,15,50,15" Padding="10,8">
             <Label Text="Messages sent by participants in this conversation are encrypted"
                    HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Center"/>
         </Frame>
+        
         <StackLayout Style="{StaticResource Key=UserStack}">
             <Frame Style="{StaticResource Key=UserFrame}">
                 <StackLayout>
@@ -47,21 +49,21 @@
             <Frame Style="{StaticResource Key=UserImageFrame}">
                 <Image Source="aperson"/>
             </Frame>
-
         </StackLayout>
+        
         <StackLayout Style="{StaticResource Key=UserStack}" Margin="10,0,85,15">
             <Frame Style="{StaticResource Key=UserImageFrame}">
                 <Image Source="vperson"/>
             </Frame>
             <Frame Style="{StaticResource Key=UserFrame}" BackgroundColor="#eff6fb">
-                <StackLayout> <Label Style="{StaticResource Key=textMessage}" 
+                <StackLayout>
+                    <Label Style="{StaticResource Key=textMessage}" 
                            Text="Send them to me here. Everything's encrypted"/>
                     <Label Text="09:29" HorizontalTextAlignment="End"/>
                 </StackLayout>
             </Frame>
-
-
         </StackLayout>
+        
         <StackLayout Style="{StaticResource Key=UserStack}">
             <Frame Style="{StaticResource Key=UserFrame}" >
                 <StackLayout>
@@ -72,8 +74,8 @@
             <Frame Style="{StaticResource Key=UserImageFrame}">
                 <Image Source="aperson"/>
             </Frame>
-
         </StackLayout>
+        
     </StackLayout>
 
 
