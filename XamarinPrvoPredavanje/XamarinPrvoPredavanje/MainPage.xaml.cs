@@ -14,5 +14,25 @@ namespace XamarinPrvoPredavanje
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Settings());
+        }
+
+        private void RedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            
+        }
+
+        private void GreenSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
+
+        private void BlueSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
     }
 }
