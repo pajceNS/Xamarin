@@ -22,6 +22,7 @@ namespace XamarinPrvoPredavanje
         {
             var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             mergedDictionaries.Clear();
+            mergedDictionaries.Add(new Dark());
         }
     }
 }

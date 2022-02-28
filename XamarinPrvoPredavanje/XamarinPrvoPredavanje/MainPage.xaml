@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPrvoPredavanje.MainPage"
              NavigationPage.HasNavigationBar="True">
-    <Grid Padding="20,20" Style="{DynamicResource GridStyle}" BackgroundColor="Gray">
+    <Grid Padding="20,20" Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -29,8 +29,6 @@
                  HeightRequest="360"/>
         <Slider Grid.Row="2"
                 x:Name="RedSlider"
-                MinimumTrackColor="Black"
-                MaximumTrackColor="Black"
                 Minimum="0"
                 Maximum="255"
                 Value="0"
@@ -44,8 +42,6 @@
                Style="{DynamicResource LabelStyle}"/>
         <Slider Grid.Row="4"
                 x:Name="GreenSlider"
-                MinimumTrackColor="Black"
-                MaximumTrackColor="Black"
                 Minimum="0"
                 Maximum="255"
                 Value="0"
@@ -60,8 +56,6 @@
                HorizontalTextAlignment="Center"/>
         <Slider Grid.Row="6"
                 x:Name="BlueSlider"
-                MinimumTrackColor="Black"
-                MaximumTrackColor="Black"
                 Minimum="0"
                 Maximum="255"
                 Value="0"
