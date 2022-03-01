@@ -9,16 +9,15 @@ namespace XamarinPrvoPredavanje.ViewModels
 {
     internal class NoteViewModel : BaseViewModel
     {
-        private Action _action;
+        private readonly Action _action;
         private string _title;
         private string _description;
         private Guid _noteId;
-        public bool IsNewNote { get;}
+        
         public NoteViewModel(Action action)
         {
             _action = action;
             IsNewNote = true;
-            IsNewNote = false;
             SaveNoteCommand = new Command(OnSaveNoteCommand);
             DeleteNoteCommand = new Command(OnDeleteNoteCommand);
         }
@@ -27,23 +26,13 @@ namespace XamarinPrvoPredavanje.ViewModels
         {
             _noteId = note.Id;
             IsNewNote = false;
-            IsNewNote = true;
             Title = note.Title;
             Description = note.Description;
-            SaveNoteCommand = new Command(OnSaveNoteCommand);
         }
 
-        private void OnSaveNoteCommand()
-        {
-           var note = new Note(Title, Description);
-            App.NotesRepository.AddNote(note);
-            _action.Invoke();
-            Application.Current.MainPage.Navigation.PopModalAsync();
-        }
-        //public bool IsNewNote { get; }
-
-        public ICommand SaveNoteCommand { get; }
-        public ICommand DeleteNoteCommand { get; }
+        public bool IsNewNote { get; }
+        public ICommand SaveNoteCommand { get; set; }
+        public ICommand DeleteNoteCommand { get; set; }
         public string Title 
         { 
             get=>_title; 
@@ -65,8 +54,15 @@ namespace XamarinPrvoPredavanje.ViewModels
         private void OnDeleteNoteCommand(object obj)
         {
             App.NotesRepository.DeleteNote(_noteId);
-            _action.Invoke();
             Application.Current.MainPage.Navigation.PopModalAsync();
+            _action?.Invoke();
+        }
+        private void OnSaveNoteCommand()
+        {
+            var note = new Note(Title, Description);
+            App.NotesRepository.AddNote(note);
+            Application.Current.MainPage.Navigation.PopModalAsync();
+            _action?.Invoke();
         }
     }
 }

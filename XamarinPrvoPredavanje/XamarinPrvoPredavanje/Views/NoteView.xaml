@@ -17,7 +17,10 @@
             </Grid.RowDefinitions>
             <Entry Grid.Row="0" Text="{Binding Title}" Placeholder="Enter note title"/>
             <Editor Grid.Row="1" Text="{Binding Description}" Placeholder="Enter note description"/>
-            <Button Grid.Row="2" Command="{Binding SaveNoteCommand}" Text="Save"/>
+            <Button Grid.Row="2" 
+                    IsVisible="{Binding IsNewNote}"
+                    Command="{Binding SaveNoteCommand}" 
+                    Text="Save"/>
             <Button Grid.Row="2" 
                     IsVisible="{Binding IsNewNote, Converter={StaticResource InvertedBooleanConverter}}"
                     Command="{Binding DeleteNoteCommand}"

@@ -18,6 +18,7 @@ namespace XamarinPrvoPredavanje.ViewModels
         public MainViewModel()
         {
             AddNoteCommand = new Command(OnAddNoteCommand);
+            SelectedNoteChangedCommand = new Command(OnSelectedNoteChangedCommand);
             LoadNotes();
         }
         public ObservableCollection<NoteViewModel> NotesSource
@@ -29,17 +30,11 @@ namespace XamarinPrvoPredavanje.ViewModels
                 OnPropertyChanged(nameof(NotesSource));
             }
         }
-
-        private void OnAddNoteCommand()
-        {
-            Application.Current.MainPage.Navigation.PushModalAsync(new NoteView() { BindingContext = new NoteViewModel(()=>LoadNotes()) });
-        }
         private NoteViewModel SelectedNote
         {
             get
             {
                 return _selectedNote;
-
             }
             set
             {
@@ -48,10 +43,23 @@ namespace XamarinPrvoPredavanje.ViewModels
             }
         }
         public ICommand AddNoteCommand { get; }
+        public ICommand SelectedNoteChangedCommand { get; }
         private void LoadNotes()
         {
             var notes = App.NotesRepository.GetAllNotes().Select(n => new NoteViewModel(n, LoadNotes));
             NotesSource = new ObservableCollection<NoteViewModel>(notes);
+        }
+        private void OnSelectedNoteChangedCommand()
+        {
+            if (SelectedNote != null)
+            {
+                Application.Current.MainPage.Navigation.PushModalAsync(new NoteView { BindingContext = SelectedNote });
+            }
+            SelectedNote = null;
+        }
+        private void OnAddNoteCommand()
+        {
+            Application.Current.MainPage.Navigation.PushModalAsync(new NoteView() { BindingContext = new NoteViewModel(() => LoadNotes()) });
         }
     }
 }
