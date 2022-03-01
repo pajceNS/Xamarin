@@ -13,6 +13,7 @@ namespace XamarinPrvoPredavanje.ViewModels
     internal class MainViewModel : BaseViewModel
     {
         private ObservableCollection<NoteViewModel> _notesSource;
+        private NoteViewModel _selectedNote;
         
         public MainViewModel()
         {
@@ -33,11 +34,23 @@ namespace XamarinPrvoPredavanje.ViewModels
         {
             Application.Current.MainPage.Navigation.PushModalAsync(new NoteView() { BindingContext = new NoteViewModel(()=>LoadNotes()) });
         }
+        private NoteViewModel SelectedNote
+        {
+            get
+            {
+                return _selectedNote;
 
+            }
+            set
+            {
+                _selectedNote = value;
+                OnPropertyChanged(nameof(SelectedNote));
+            }
+        }
         public ICommand AddNoteCommand { get; }
         private void LoadNotes()
         {
-            var notes = App.NotesRepository.GetAllNotes().Select(n => new NoteViewModel(n));
+            var notes = App.NotesRepository.GetAllNotes().Select(n => new NoteViewModel(n, LoadNotes));
             NotesSource = new ObservableCollection<NoteViewModel>(notes);
         }
     }

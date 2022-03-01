@@ -12,13 +12,22 @@ namespace XamarinPrvoPredavanje.ViewModels
         private Action _action;
         private string _title;
         private string _description;
+        private Guid _noteId;
+        public bool IsNewNote { get;}
         public NoteViewModel(Action action)
         {
             _action = action;
+            IsNewNote = true;
+            IsNewNote = false;
             SaveNoteCommand = new Command(OnSaveNoteCommand);
+            DeleteNoteCommand = new Command(OnDeleteNoteCommand);
         }
-        public NoteViewModel(Note note)
+        
+        public NoteViewModel(Note note, Action action) : this(action)
         {
+            _noteId = note.Id;
+            IsNewNote = false;
+            IsNewNote = true;
             Title = note.Title;
             Description = note.Description;
             SaveNoteCommand = new Command(OnSaveNoteCommand);
@@ -31,8 +40,10 @@ namespace XamarinPrvoPredavanje.ViewModels
             _action.Invoke();
             Application.Current.MainPage.Navigation.PopModalAsync();
         }
+        //public bool IsNewNote { get; }
 
         public ICommand SaveNoteCommand { get; }
+        public ICommand DeleteNoteCommand { get; }
         public string Title 
         { 
             get=>_title; 
@@ -50,6 +61,12 @@ namespace XamarinPrvoPredavanje.ViewModels
                 _description = value;
                 OnPropertyChanged(nameof(Description));
             }
+        }
+        private void OnDeleteNoteCommand(object obj)
+        {
+            App.NotesRepository.DeleteNote(_noteId);
+            _action.Invoke();
+            Application.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }

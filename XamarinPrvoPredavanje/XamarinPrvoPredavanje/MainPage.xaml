@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:XamarinPrvoPredavanje.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:XamarinPrvoPredavanje.ViewModels"
              x:Class="XamarinPrvoPredavanje.MainPage"
-             x:DataType="viewmodels:MainViewModel">
+             x:DataType="viewmodels:NoteViewModel">
     <ContentPage.BindingContext>
         <viewmodels:MainViewModel/>
     </ContentPage.BindingContext>
@@ -14,7 +15,9 @@
         <CollectionView
             Grid.Row="0"
             SelectionMode="Single"
-            ItemsSource="{Binding NotesSource}">
+            ItemsSource="{Binding NotesSource}"
+            SelectedItem="{Binding SelectedNote}"
+            SelectionChangedCommand="{Binding SelectedNoteChangedCommand}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="viewmodels:NoteViewModel">
                     <StackLayout>
