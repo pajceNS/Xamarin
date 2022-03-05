@@ -6,7 +6,7 @@ using XamarinPrvoPredavanje.Models;
 
 namespace XamarinPrvoPredavanje.DataAccess
 {
-    internal class NotesRepository
+    internal class NotesRepository : INotesRepository
     {
         private List<Note> _notes = new List<Note>();
         public NotesRepository()
@@ -20,7 +20,7 @@ namespace XamarinPrvoPredavanje.DataAccess
         }
         public void DeleteNote(Guid id)
         {
-            _notes = _notes.Where(note => note.Id !=id).ToList();
+            _notes = _notes.Where(note => note.Id != id).ToList();
         }
         public IEnumerable<Note> GetAllNotes()
         {

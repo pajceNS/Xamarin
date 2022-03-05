@@ -6,22 +6,27 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XamarinPrvoPredavanje.DataAccess;
+using XamarinPrvoPredavanje.Services;
 using XamarinPrvoPredavanje.Views;
 
 namespace XamarinPrvoPredavanje.ViewModels
 {
     internal class MainViewModel : BaseViewModel
     {
-        private ObservableCollection<NoteViewModel> _notesSource;
-        private NoteViewModel _selectedNote;
+        private readonly INotesRepository _notesRepository;
+        private readonly INavigationService _navigationService;
+        private ObservableCollection<NoteItemViewModel> _notesSource;
+        private NoteItemViewModel _selectedNote;
         
-        public MainViewModel()
+        public MainViewModel(INotesRepository notesRepository, INavigationService navigationService)
         {
+            _notesRepository = notesRepository;
+            _navigationService = navigationService;
             AddNoteCommand = new Command(OnAddNoteCommand);
             SelectedNoteChangedCommand = new Command(OnSelectedNoteChangedCommand);
             LoadNotes();
         }
-        public ObservableCollection<NoteViewModel> NotesSource
+        public ObservableCollection<NoteItemViewModel> NotesSource
         {
             get { return _notesSource; }
             set 
@@ -30,7 +35,7 @@ namespace XamarinPrvoPredavanje.ViewModels
                 OnPropertyChanged(nameof(NotesSource));
             }
         }
-        public NoteViewModel SelectedNote
+        public NoteItemViewModel SelectedNote
         {
             get
             {
@@ -46,20 +51,20 @@ namespace XamarinPrvoPredavanje.ViewModels
         public ICommand SelectedNoteChangedCommand { get; }
         private void LoadNotes()
         {
-            var notes = App.NotesRepository.GetAllNotes().Select(n => new NoteViewModel(n, LoadNotes));
-            NotesSource = new ObservableCollection<NoteViewModel>(notes);
+            var notes = _notesRepository.GetAllNotes().Select(n => new NoteItemViewModel(n));
+            NotesSource = new ObservableCollection<NoteItemViewModel>(notes);
         }
         private void OnSelectedNoteChangedCommand()
         {
             if (SelectedNote != null)
             {
-                Application.Current.MainPage.Navigation.PushModalAsync(new NoteView { BindingContext = SelectedNote });
+                _navigationService.NavigateToNoteEditor(SelectedNote.Note);
             }
             SelectedNote = null;
         }
         private void OnAddNoteCommand()
         {
-            Application.Current.MainPage.Navigation.PushModalAsync(new NoteView() { BindingContext = new NoteViewModel(() => LoadNotes()) });
+            _navigationService.NavigateToNewNoteEditor();
         }
     }
 }

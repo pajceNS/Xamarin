@@ -4,7 +4,7 @@
              xmlns:viewmodels="clr-namespace:XamarinPrvoPredavanje.ViewModels"
              xmlns:converters="clr-namespace:XamarinPrvoPredavanje.Converters"
              x:Class="XamarinPrvoPredavanje.Views.NoteView"
-             x:DataType="viewmodels:NoteViewModel">
+             x:DataType="viewmodels:NoteEditorViewModel">
     <ContentPage.Resources>
         <converters:InvertedBooleanConverter x:Key="InvertedBooleanConverter"/>
     </ContentPage.Resources>

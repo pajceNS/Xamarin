@@ -4,9 +4,6 @@
              xmlns:viewmodels="clr-namespace:XamarinPrvoPredavanje.ViewModels"
              x:Class="XamarinPrvoPredavanje.MainPage"
              x:DataType="viewmodels:MainViewModel">
-    <ContentPage.BindingContext>
-        <viewmodels:MainViewModel/>
-    </ContentPage.BindingContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -19,7 +16,7 @@
             SelectionChangedCommand="{Binding SelectedNoteChangedCommand}"
             ItemsSource="{Binding NotesSource}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="viewmodels:NoteViewModel">
+                <DataTemplate x:DataType="viewmodels:NoteItemViewModel">
                     <StackLayout Padding="10">
                         <Label FontSize="25" LineBreakMode="TailTruncation" MaxLines="1" Text="{Binding Title}"/>
                         <Label FontSize="20" LineBreakMode="TailTruncation" MaxLines="2" Text="{Binding Description}"/>
