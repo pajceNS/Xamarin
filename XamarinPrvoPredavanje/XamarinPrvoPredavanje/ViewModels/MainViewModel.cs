@@ -30,7 +30,7 @@ namespace XamarinPrvoPredavanje.ViewModels
                 OnPropertyChanged(nameof(NotesSource));
             }
         }
-        private NoteViewModel SelectedNote
+        public NoteViewModel SelectedNote
         {
             get
             {
