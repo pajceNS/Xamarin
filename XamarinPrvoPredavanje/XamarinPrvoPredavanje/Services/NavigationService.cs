@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using XamarinPrvoPredavanje.Models;
+using XamarinPrvoPredavanje.ViewModels;
 using XamarinPrvoPredavanje.Views;
 
 namespace XamarinPrvoPredavanje.Services
@@ -18,6 +20,12 @@ namespace XamarinPrvoPredavanje.Services
         public void GoBack()
         {
             Application.Current.MainPage.Navigation.PopModalAsync();
+            var lastView = Application.Current.MainPage.Navigation.NavigationStack.Last();
+            if (lastView is MainPage mainPage && mainPage.BindingContext is MainViewModel mainViewModel)
+            {
+                mainViewModel.LoadNotes();
+            }
+            
         }
 
         public void NavigateToNoteEditor(object note)

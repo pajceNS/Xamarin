@@ -49,7 +49,7 @@ namespace XamarinPrvoPredavanje.ViewModels
         }
         public ICommand AddNoteCommand { get; }
         public ICommand SelectedNoteChangedCommand { get; }
-        private void LoadNotes()
+        public void LoadNotes()
         {
             var notes = _notesRepository.GetAllNotes().Select(n => new NoteItemViewModel(n));
             NotesSource = new ObservableCollection<NoteItemViewModel>(notes);

@@ -16,7 +16,7 @@ namespace XamarinPrvoPredavanje
         {
             InitializeComponent();
             SetupServices();
-            MainPage = new MainPage { BindingContext = Locator.MainViewModel};           
+            MainPage = new NavigationPage(new MainPage { BindingContext = Locator.MainViewModel});           
         }
         internal static ViewModelLocator Locator => _viewLocator ?? (_viewLocator = new ViewModelLocator(_serviceProvider));
         //if locator null vrati new model ??
