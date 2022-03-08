@@ -12,10 +12,10 @@ namespace XamarinPrvoPredavanje
     {
         private static IServiceProvider _serviceProvider;
         private static ViewModelLocator _viewLocator;
-        public App()
+        public App(Action<ServiceCollection> action)
         {
             InitializeComponent();
-            SetupServices();
+            SetupServices(action);
             MainPage = new NavigationPage(new MainPage { BindingContext = Locator.MainViewModel});           
         }
         internal static ViewModelLocator Locator => _viewLocator ?? (_viewLocator = new ViewModelLocator(_serviceProvider));
@@ -40,9 +40,10 @@ namespace XamarinPrvoPredavanje
         protected override void OnResume()
         {
         }
-        private void SetupServices()
+        private void SetupServices(Action <ServiceCollection> action)
         {
             var serviceCollection = new ServiceCollection();
+            action?.Invoke(serviceCollection);
             serviceCollection.AddTransient<MainViewModel>();
             serviceCollection.AddTransient<NoteEditorViewModel>();
             serviceCollection.AddSingleton<INotesRepository, NotesRepository>();

@@ -14,21 +14,25 @@ namespace XamarinPrvoPredavanje.ViewModels
         
         private readonly INotesRepository _notesRepository;
         private readonly INavigationService _navigationService;
+        private readonly IClipboard _clipboardService;
         private string _title;
         private string _description;
         private Guid _noteId;
         
-        public NoteEditorViewModel(INotesRepository notesRepository, INavigationService navigationService)
+        public NoteEditorViewModel(INotesRepository notesRepository, INavigationService navigationService, IClipboard clipboardService)
         {
             _notesRepository = notesRepository;
             _navigationService = navigationService;
+            _clipboardService = clipboardService;
 
             IsNewNote = true;
             SaveNoteCommand = new Command(OnSaveNoteCommand);
             DeleteNoteCommand = new Command(OnDeleteNoteCommand);
-        }
+            CopyNoteCommand = new Command(OnCopyNoteCommand);
+        }    
 
         public bool IsNewNote { get; set; }
+        public ICommand CopyNoteCommand { get; set; }
         public ICommand SaveNoteCommand { get; set; }
         public ICommand DeleteNoteCommand { get; set; }
         public string Title 
@@ -49,12 +53,18 @@ namespace XamarinPrvoPredavanje.ViewModels
                 OnPropertyChanged(nameof(Description));
             }
         }
+        
         public void LoadNote(Note note)
         {
             _noteId = note.Id;
             IsNewNote = false;
             Title = note.Title;
             Description = note.Description;
+        }
+        private void OnCopyNoteCommand(object obj)
+        {
+            //var text = Title + "/n" + Description;
+            _clipboardService.SetText($"{Title}{Environment.NewLine}{Description}");
         }
         private void OnDeleteNoteCommand(object obj)
         {
